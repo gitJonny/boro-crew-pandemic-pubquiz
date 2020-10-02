@@ -1,6 +1,7 @@
 import ipywidgets as widgets
+from IPython.display import YouTubeVideo as YT
 
-def size_matters(question = 7):
+def size_matters(quiz_round = 1, question = 7):
 
     team_names = ['Player 1',
                   'Player 2',
@@ -8,28 +9,49 @@ def size_matters(question = 7):
                   ]
     
     all_answers = ['']
-    if question == 1:
+    if quiz_round == 1:    
+        if question == 1:
+            f = open('sizematters_mrmen.txt', 'r')
+        elif question == 2:
+            f = open('sizematters_bond.txt', 'r')
+        elif question == 3:
+            f = open('sizematters_friends.txt', 'r')
+        elif question == 4:
+            f = open('sizematters_cities.txt', 'r')
+        elif question == 5:
+            f = open('sizematters_spicegirls.txt', 'r')
+        elif question == 6:
+            f = open('sizematters_harrypotter.txt', 'r')
+        elif question == 7:
+            f = open('sizematters_jedis.txt', 'r')
+        elif question == 8:
+            f = open('sizematters_strictly.txt', 'r')
+        elif question == 9:
+            f = open('sizematters_rugby.txt', 'r')
+        elif question == 10:
+            f = open('sizematters_thomas.txt', 'r')
+        else:
+            f = open('sizematters_mrmen.txt', 'r')
+    elif quiz_round == 2:
         f = open('sizematters_mrmen.txt', 'r')
-    elif question == 2:
-        f = open('sizematters_bond.txt', 'r')
-    elif question == 3:
-        f = open('sizematters_friends.txt', 'r')
-    elif question == 4:
-        f = open('sizematters_cities.txt', 'r')
-    elif question == 5:
-        f = open('sizematters_spicegirls.txt', 'r')
-    elif question == 6:
-        f = open('sizematters_harrypotter.txt', 'r')
-    elif question == 7:
-        f = open('sizematters_jedis.txt', 'r')
-    elif question == 8:
-        f = open('sizematters_strictly.txt', 'r')
-    elif question == 9:
-        f = open('sizematters_rugby.txt', 'r')
-    elif question == 10:
-        f = open('sizematters_thomas.txt', 'r')
+    elif quiz_round == 3:
+        if question == 1:
+            f = open('sizematters_freshprince.txt', 'r')
+        elif question == 2:
+            f = open('sizematters_paradise.txt', 'r')
+        elif question == 3:
+            f = open('sizematters_oops.txt', 'r')
+        elif question == 4:
+            f = open('sizematters_okay.txt', 'r')
+        elif question == 5:
+            f = open('sizematters_dontstop.txt', 'r')
+        else:
+            f = open('sizematters_mrmen.txt', 'r')
+    else:
+        f = open('sizematters_mrmen.txt', 'r')
         
     all_answers += f.read().split('\n')
+    all_answers = list(set(all_answers)) # removes duplicates
 
     sorted_answers = sorted(all_answers, key = str.lower)
     lengths = [(len(item) 
@@ -39,6 +61,7 @@ def size_matters(question = 7):
                 - item.count('!')
                 - item.count('?')
                 - item.count("'")
+                - item.count('"')
                 - item.count('-')
                 - item.count('(')
                 - item.count(')')

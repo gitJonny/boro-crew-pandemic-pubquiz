@@ -1,12 +1,13 @@
 import ipywidgets as widgets
 from IPython.display import YouTubeVideo as YT
 
-def size_matters(quiz_round = 1, question = 7):
-
-    team_names = ['Player 1',
-                  'Player 2',
-                  'Player 3',
-                  ]
+def size_matters(quiz_round = 1,
+                 question = 7,
+                 team_names = ['Player 1',
+                               'Player 2',
+                               'Player 3',
+                              ]
+                ):
     
     all_answers = ['']
     if quiz_round == 1:    

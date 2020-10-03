@@ -46,6 +46,16 @@ def size_matters(quiz_round = 1,
             f = open('sizematters_okay.txt', 'r')
         elif question == 5:
             f = open('sizematters_dontstop.txt', 'r')
+        elif question == 6:
+            f = open('sizematters_smallthings.txt', 'r')
+        elif question == 7:
+            f = open('sizematters_tainted.txt', 'r')
+        elif question == 8:
+            f = open('sizematters_sunscreen.txt', 'r')
+        elif question == 9:
+            f = open('sizematters_bop.txt', 'r')
+        elif question == 10:
+            f = open('sizematters_dancefloor.txt', 'r')
         else:
             f = open('sizematters_mrmen.txt', 'r')
     else:
